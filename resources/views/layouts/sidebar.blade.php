@@ -1,0 +1,46 @@
+
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">MAIN NAVIGATION</li>
+    <!-- Optionally, you can add icons to the links -->
+    <li class="{{ request()->is('superadmin/beranda') ? 'active' : '' }}"><a href="/superadmin/beranda"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
+    <li class="{{ request()->is('superadmin/data/*') ? 'active' : '' }} treeview">
+        <a href="#">
+        <i class="fa fa-database"></i> <span>Portal</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class="{{ request()->is('superadmin/portal/informasi*') ? 'active' : '' }}"><a href="/superadmin/portal/informasi"><i class="fa fa-circle {{ request()->is('superadmin/portal/informasi*') ? 'text-blue' : '' }}"></i> Informasi</a></li>
+
+        </ul>
+    </li>
+    <li class="{{ request()->is('superadmin/data/*') ? 'active' : '' }} treeview">
+        <a href="#">
+        <i class="fa fa-database"></i> <span>Data</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class="{{ request()->is('superadmin/data/jurusan*') ? 'active' : '' }}"><a href="/superadmin/data/jurusan"><i class="fa fa-circle {{ request()->is('superadmin/data/jurusan*') ? 'text-blue' : '' }}"></i> Jurusan</a></li>
+        <li class="{{ request()->is('superadmin/data/matakuliah') ? 'active' : '' }}"><a href="/superadmin/data/matakuliah"><i class="fa fa-circle {{ request()->is('superadmin/data/matakuliah') ? 'text-blue' : '' }}"></i> Mata Kuliah</a></li>
+        <li class="{{ request()->is('superadmin/data/kurikulum') ? 'active' : '' }}"><a href="/superadmin/data/kurikulum"><i class="fa fa-circle {{ request()->is('superadmin/data/kurikulum') ? 'text-blue' : '' }}"></i> Kurikulum</a></li>
+        <li class="{{ request()->is('superadmin/data/mahasiswa') ? 'active' : '' }}"><a href="/superadmin/data/mahasiswa"><i class="fa fa-circle {{ request()->is('superadmin/data/mahasiswa') ? 'text-blue' : '' }}"></i> Mahasiswa</a></li>
+
+        </ul>
+    </li>
+    <li class="{{ request()->is('superadmin/setting/*') ? 'active' : '' }} treeview">
+        <a href="#">
+        <i class="fa fa-database"></i> <span>Setting</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class="{{ request()->is('superadmin/setting/role*') ? 'active' : '' }}"><a href="/superadmin/setting/role"><i class="fa fa-circle {{ request()->is('superadmin/setting/role*') ? 'text-blue' : '' }}"></i> Role</a></li>
+
+        </ul>
+    </li>
+    <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+  </ul>
