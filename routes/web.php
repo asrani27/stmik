@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\SuperadminController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,5 +68,11 @@ Route::middleware(['superadmin'])->group(function () {
         Route::post('/data/mahasiswa/delete', [SuperadminController::class, 'mahasiswa_delete']);
 
         Route::get('/portal/informasi', [SuperadminController::class, 'portal']);
+    });
+});
+
+Route::middleware(['mahasiswa'])->group(function () {
+    Route::prefix('mahasiswa')->group(function () {
+        Route::get('/beranda', [MahasiswaController::class, 'beranda']);
     });
 });

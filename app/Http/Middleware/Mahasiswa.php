@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class Superadmin
+class Mahasiswa
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class Superadmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check() || Auth::user()->roles != 'superadmin') {
+        if (!Auth::check() || Auth::user()->roles != 'mahasiswa') {
             abort(403, 'Unauthorized action.');
         }
 

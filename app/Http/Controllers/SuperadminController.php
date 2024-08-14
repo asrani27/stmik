@@ -273,7 +273,12 @@ class SuperadminController extends Controller
         $n->name = $mhs->nama;
         $n->username = $mhs->nim;
         $n->password = Hash::make($mhs->nim);
+        $n->roles = 'mahasiswa';
         $n->save();
+
+        $mhs->update([
+            'user_id' => $n->id
+        ]);
         Session::flash('success', 'User dan Password : ' . $mhs->nim);
         return back();
     }

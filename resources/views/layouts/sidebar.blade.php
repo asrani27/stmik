@@ -1,7 +1,9 @@
 
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
-    <!-- Optionally, you can add icons to the links -->
+
+    @if (Auth::user()->roles == 'superadmin')
+    <!-- Superadmin -->
     <li class="{{ request()->is('superadmin/beranda') ? 'active' : '' }}"><a href="/superadmin/beranda"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
     <li class="{{ request()->is('superadmin/portal/*') ? 'active' : '' }} treeview">
         <a href="#">
@@ -44,6 +46,15 @@
 
         </ul>
     </li>
+    @endif
+    
+    @if (Auth::user()->roles == 'mahasiswa')
+    <!-- Mahasiswa -->
+    <li class="{{ request()->is('mahasiswa/beranda') ? 'active' : '' }}"><a href="/mahasiswa/beranda"><i class="fa fa-dashboard"></i> <span>BERANDA</span></a></li>
+    <li class="{{ request()->is('mahasiswa/krs') ? 'active' : '' }}"><a href="/mahasiswa/krs"><i class="fa fa-book"></i> <span>KRS</span></a></li>
+    <li class="{{ request()->is('mahasiswa/khs') ? 'active' : '' }}"><a href="/mahasiswa/khs"><i class="fa fa-book"></i> <span>KHS</span></a></li>
+    <li class="{{ request()->is('mahasiswa/transkrip') ? 'active' : '' }}"><a href="/mahasiswa/transkrip"><i class="fa fa-book"></i> <span>TRANSKRIP NILAI</span></a></li>
+    @endif
     
     <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
   </ul>

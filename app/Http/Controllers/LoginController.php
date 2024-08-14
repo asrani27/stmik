@@ -11,13 +11,13 @@ class LoginController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            if (Auth::user()->hasRole('superadmin')) {
+            if (Auth::user()->roles == 'superadmin') {
                 Session::flash('success', 'Selamat Datang');
                 return redirect('/superadmin/beranda');
-            } elseif (Auth::user()->hasRole('mahasiswa')) {
+            } elseif (Auth::user()->roles == 'mahasiswa') {
                 Session::flash('success', 'Selamat Datang');
                 return redirect('/mahasiswa/beranda');
-            } elseif (Auth::user()->hasRole('dosen')) {
+            } elseif (Auth::user()->roles == 'dosen') {
                 Session::flash('success', 'Selamat Datang');
                 return redirect('/dosen/beranda');
             } else {
@@ -34,13 +34,13 @@ class LoginController extends Controller
 
         if (Auth::attempt($credential, $remember)) {
 
-            if (Auth::user()->hasRole('superadmin')) {
+            if (Auth::user()->roles == 'superadmin') {
                 Session::flash('success', 'Selamat Datang');
                 return redirect('/superadmin/beranda');
-            } elseif (Auth::user()->hasRole('mahasiswa')) {
+            } elseif (Auth::user()->roles == 'mahasiswa') {
                 Session::flash('success', 'Selamat Datang');
                 return redirect('/mahasiswa/beranda');
-            } elseif (Auth::user()->hasRole('dosen')) {
+            } elseif (Auth::user()->roles == 'dosen') {
                 Session::flash('success', 'Selamat Datang');
                 return redirect('/dosen/beranda');
             } else {
