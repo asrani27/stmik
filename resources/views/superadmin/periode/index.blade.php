@@ -4,9 +4,9 @@
 
 <div class="box box-primary">
     <div class="box-header with-border">
-      <h3 class="box-title"><i class="fa fa-book"></i> kurikulum</h3>
+      <h3 class="box-title"><i class="fa fa-book"></i> Periode</h3>
       <div class="pull-right box-tools">
-        <a href="/superadmin/data/kurikulum/add" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+        <a href="/superadmin/data/periode/add" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
       </div>
     </div>
     <!-- /.box-header -->
@@ -16,8 +16,8 @@
         <tr>
           <th>#</th>
           <th>Tahun</th>
-          <th>Jurusan</th>
-          <th>Is aktif?</th>
+          <th>Semester</th>
+          <th>Is Aktif?</th>
           <th>Aksi</th>
         </tr>
         </thead>
@@ -26,12 +26,11 @@
               <tr>
                 <td>{{$key + 1}}</td>
                 <td>{{$item->tahun}}</td>
-                <td>{{$item->jurusan == null ? '': $item->jurusan->nama}}</td>
+                <td>{{$item->semester}}</td>
                 <td>{{$item->is_aktif}}</td>
                 <td>
-                <a href="/superadmin/data/kurikulum/detail/{{$item->id}}" class="btn btn-primary btn-xs"><i class="fa fa-book"></i> Kurikulum</a>
 
-                <a href="/superadmin/data/kurikulum/edit/{{$item->id}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
+                <a href="/superadmin/data/periode/edit/{{$item->id}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
                 <a href="#" data-id="{{$item->id}}" class="btn btn-danger btn-xs hapusdata"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
@@ -49,7 +48,7 @@
             <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title"><i class="ion ion-clipboard"></i> Hapus Data</h4>
         </div>
-        <form method="post" action="/superadmin/data/kurikulum/delete">
+        <form method="post" action="/superadmin/data/periode/delete">
         <div class="modal-body">
             @csrf
             
@@ -77,7 +76,8 @@
       </div>
       <!-- /.modal-content -->
     </div>
-</div>
+    <!-- /.modal-dialog -->
+  </div>
 @endsection
 
 @push('js')

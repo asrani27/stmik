@@ -6,15 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Mahasiswa extends Model
+class Periode extends Model
 {
     use HasUuids;
     use HasFactory;
-    protected $table = "mahasiswa";
+    protected $table = "periode";
     protected $guarded = ['id'];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
 }

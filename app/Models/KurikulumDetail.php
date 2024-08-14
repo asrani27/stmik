@@ -6,19 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Kurikulum extends Model
+class KurikulumDetail extends Model
 {
     use HasUuids;
     use HasFactory;
-    protected $table = "kurikulum";
+    protected $table = "kurikulum_detail";
     protected $guarded = ['id'];
 
     public function jurusan()
     {
-        return $this->belongsTo(Jurusan::class, 'kode_jurusan', 'kode');
+        return $this->belongsTo(Kurikulum::class, 'kurikulum_id', 'id');
     }
-    public function detail()
+    public function matakuliah()
     {
-        return $this->hasMany(KurikulumDetail::class, 'kurikulum_id', 'id');
+        return $this->belongsTo(MataKuliah::class, 'kode_mata_kuliah', 'kode');
     }
 }

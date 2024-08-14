@@ -17,6 +17,7 @@
           <th>#</th>
           <th>Kode</th>
           <th>Nama</th>
+          <th>Singkatan</th>
           <th>Program</th>
           <th>Aksi</th>
         </tr>
@@ -27,6 +28,7 @@
                 <td>{{$key + 1}}</td>
                 <td>{{$item->kode}}</td>
                 <td>{{$item->nama}}</td>
+                <td>{{$item->singkatan}}</td>
                 <td>{{$item->program}}</td>
                 <td>
 
@@ -43,7 +45,7 @@
 <div class="modal fade" id="modal-hapus">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header bg-red">
+        <div class="modal-header bg-blue">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title"><i class="ion ion-clipboard"></i> Hapus Data</h4>
