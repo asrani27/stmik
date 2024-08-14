@@ -27,7 +27,11 @@
                 <td>{{$key + 1}}</td>
                 <td>{{$item->tahun}}</td>
                 <td>{{$item->semester}}</td>
-                <td>{{$item->is_aktif}}</td>
+                <td>
+                  @if ($item->is_aktif == 'Y')
+                      <span class="label label-success"><i class="fa fa-check"></i> active</span>
+                  @endif
+                </td>
                 <td>
 
                 <a href="/superadmin/data/periode/edit/{{$item->id}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i></a>
