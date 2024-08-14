@@ -35,14 +35,14 @@
     </li>
     <li class="{{ request()->is('superadmin/setting/*') ? 'active' : '' }} treeview">
         <a href="#">
-        <i class="fa fa-database"></i> <span>Setting</span>
+        <i class="fa fa-database"></i> <span>SETTING</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
-        <li class="{{ request()->is('superadmin/setting/role*') ? 'active' : '' }}"><a href="/superadmin/setting/role"><i class="fa fa-circle {{ request()->is('superadmin/setting/role*') ? 'text-blue' : '' }}"></i> Role</a></li>
-        <li class="{{ request()->is('superadmin/setting/import*') ? 'active' : '' }}"><a href="/superadmin/setting/import"><i class="fa fa-circle {{ request()->is('superadmin/setting/import*') ? 'text-blue' : '' }}"></i> Import</a></li>
+        {{-- <li class="{{ request()->is('superadmin/setting/role*') ? 'active' : '' }}"><a href="/superadmin/setting/role"><i class="fa fa-circle {{ request()->is('superadmin/setting/role*') ? 'text-blue' : '' }}"></i> ROLE</a></li> --}}
+        <li class="{{ request()->is('superadmin/setting/import*') ? 'active' : '' }}"><a href="/superadmin/setting/import"><i class="fa fa-circle {{ request()->is('superadmin/setting/import*') ? 'text-blue' : '' }}"></i> IMPORT</a></li>
 
         </ul>
     </li>
