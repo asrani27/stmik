@@ -56,5 +56,5 @@
     <li class="{{ request()->is('mahasiswa/transkrip') ? 'active' : '' }}"><a href="/mahasiswa/transkrip"><i class="fa fa-book"></i> <span>TRANSKRIP NILAI</span></a></li>
     @endif
     
-    <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+    <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>LOGOUT</span></a></li>
   </ul>

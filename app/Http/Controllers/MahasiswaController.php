@@ -10,4 +10,17 @@ class MahasiswaController extends Controller
     {
         return view('mahasiswa.beranda.index');
     }
+
+    public function krs()
+    {
+        return view('mahasiswa.krs.index');
+    }
+    public function khs()
+    {
+        return view('mahasiswa.khs.index');
+    }
+    public function transkrip()
+    {
+        return view('mahasiswa.transkrip.index');
+    }
 }

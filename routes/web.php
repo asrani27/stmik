@@ -74,5 +74,8 @@ Route::middleware(['superadmin'])->group(function () {
 Route::middleware(['mahasiswa'])->group(function () {
     Route::prefix('mahasiswa')->group(function () {
         Route::get('/beranda', [MahasiswaController::class, 'beranda']);
+        Route::get('/krs', [MahasiswaController::class, 'krs']);
+        Route::get('/khs', [MahasiswaController::class, 'khs']);
+        Route::get('/transkrip', [MahasiswaController::class, 'transkrip']);
     });
 });
